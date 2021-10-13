@@ -5,7 +5,7 @@ Authors@R:
     person(given = "Siyi",
            family = "Li",
            role = c("aut", "cre"),
-           email = "slii0048@student.monash.edu"
+           email = "slii0048@student.monash.edu")
 Description: Lots of datasets
 License: GPL (>= 3)
 Encoding: UTF-8
