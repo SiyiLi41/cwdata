@@ -15,12 +15,13 @@
 #' x <- c(75, 0, 5, 20, NA)
 #' stack_normalise(x)
 #  x <- c(NA, NA, 10)
-#' stack_normalize(x)
+#' stack_normalise(x)
 
 stack_normalize<-function(x){
-  x/sum(x)
+  x/sum(x, na.rm = TRUE)
 }
 
 #' @rdname stack_normalize
 
 stack_normalise<-stack_normalize
+
