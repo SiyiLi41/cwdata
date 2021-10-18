@@ -4,7 +4,8 @@
 #'More details about the data
 #'
 #'
-#' @section Data contents:
+#' @section Background:
+#' The data was collected from .... over the course of ....
 #'
 #' @format A data frame with 53940 rows ans 10 variables;
 #' \describe{
@@ -13,6 +14,8 @@
 #'  ...
 #'
 #'}
+#'
+#'
 #'
 #' @source where you get the data
 #' @examples
