@@ -1,6 +1,10 @@
 pandoc: 2.11.4
 pkgdown: 1.6.1
 pkgdown_sha: ~
-articles: {}
-last_built: 2021-10-15T00:05Z
+articles:
+  Key_Crop_Yields: Key_Crop_Yields.html
+last_built: 2021-10-18T08:52Z
+urls:
+  reference: https://github.com/SiyiLi41/reference
+  article: https://github.com/SiyiLi41/articles
 
