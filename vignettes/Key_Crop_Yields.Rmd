@@ -1,0 +1,53 @@
+---
+title: "Key_Crop_Yields"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Key_Crop_Yields}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(cwdata)
+library(ggplot2)
+library(dplyr)
+```
+
+```{r}
+key_crop_yields%>%
+  filter(year==2017)%>%
+  group_by(crop)%>%
+  summarise(tonnes_per_hectare=sum(tonnes_per_hectare, na.rm = TRUE))%>%
+  ggplot(aes(x=forcats::fct_reorder(crop, tonnes_per_hectare, .desc=TRUE),
+             y=tonnes_per_hectare))+
+  geom_col()+
+  theme_bw()+
+  labs(y="Tonnes per hectare",
+       x="Crop",
+       title="Globle crop production")
+```
+The most produced crop in the world is potatoes! 
+Has this always been the case?
+
+```{r}
+key_crop_yields%>%
+  group_by(year, crop)%>%
+  summarise(tonnes_per_hectare=sum(tonnes_per_hectare, na.rm = TRUE))%>%
+  ggplot(aes(x=year,
+             y=tonnes_per_hectare, 
+             color=crop))+
+  geom_line()+
+  theme_bw()+
+  labs(y="Tonnes per hectare",
+       x="Crop",
+       title="Globle crop production")
+```
+Looks like potatoes are always been widely grown, 
+
